@@ -1,0 +1,539 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veluvia - Korean Beauty</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <a href="#" class="logo">Veluvia</a>
+                <nav class="nav-menu">
+                    <a href="#" class="nav-link">HOME</a>
+                    <a href="#" class="nav-link">SHOP</a>
+                    <a href="#" class="nav-link">ABOUT</a>
+                    <a href="#" class="nav-link">CONTACT</a>
+                    <a href="#" class="login-btn">LOG IN</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Shopping<br />   with<br />rom&nd</h1>
+                <p class="hero-subtitle">Glow up with Korea's favorite cosmetic brand – now at Veluvia!</p>
+            </div>
+        </section>
+
+        <!-- Products Header -->
+        <section class="products-header">
+            <h2 class="products-title">Our products</h2>
+        </section>
+
+        <!-- Product Categories -->
+        <section class="product-categories">
+            <div class="category-item" onclick="filterProducts('lip-tint')">
+                <img src="Lip tint.jpg" alt="Lip Tint" class="category-image" />
+                <span class="category-label">💄 Lip Tint</span>
+            </div>
+            <div class="category-item" onclick="filterProducts('cushion')">
+                <img src="Cushion.jpg" alt="Cushion" class="category-image" />
+                <span class="category-label">💖 Cushion</span>
+            </div>
+            <div class="category-item" onclick="filterProducts('eyeshadow')">
+                <img src="Eyeshadow.jpg" alt="Eyeshadow" class="category-image" />
+                <span class="category-label">👁️ Eyeshadow</span>
+            </div>
+            <div class="category-item" onclick="filterProducts('mascara')">
+                <img src="Mascara.jpg" alt="Mascara" class="category-image" />
+                <span class="category-label">🌟 Mascara</span>
+            </div>
+        </section>
+
+        <!-- Favorite Items Section -->
+        <section class="favorite-section">
+            <h2 class="favorite-title">💗Get your favourite item💗</h2>
+        </section>
+
+        <!-- Product Grid -->
+        <section class="product-grid" id="productGrid">
+            <!-- Row 1 -->
+            <div class="product-card" data-category="lip-tint">
+                <div class="product-image-container">
+                     <a href="Glasting melting balm.html">
+                        <img src="Glastung melting lip balm.jpg" alt="Glasting Melting Balm" class="product-image" />
+                    </a>
+                   <!-- <img src="Glastung melting lip balm.jpg" alt="Glasting Melting Balm" class="product-image" /> -->
+                    <span class="discount-badge">29% off</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Glasting Melting Balm #Original Series</h3>
+                    <div class="product-pricing">
+                        <div class="price-info">
+                            <span class="current-price">$6.90</span>
+                            <span class="original-price">$13.90</span>
+                        </div>
+                        <button class="cart-btn" onclick="addToCart('glasting-melting-balm-original')">
+                            <img src="Cart.jpg" alt="Add to cart" class="cart-icon" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="lip-tint">
+                <div class="product-image-container">
+                    <a href="Glasting melting balm2.html">
+                        <img src="Glasting melting balm.jpg" alt="Glasting Melting Balm Dusty" class="product-image" />
+                    </a>
+                    <span class="discount-badge">29% off</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Glasting Melting Balm #Dusty On The Nude</h3>
+                    <div class="product-pricing">
+                        <div class="price-info">
+                            <span class="current-price">$9.99</span>
+                            <span class="original-price">$13.99</span>
+                        </div>
+                        <button class="cart-btn" onclick="addToCart('glasting-melting-balm-dusty')">
+                            <img src="Cart.jpg" alt="Add to cart" class="cart-icon" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="lip-tint">
+                <div class="product-image-container">
+                    <img src="Juicy lasting tint.jpg" alt="Juicy Lasting Tint" class="product-image" />
+                    <span class="discount-badge">29% off</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Juicy Lasting Tint Original Series</h3>
+                    <div class="product-pricing">
+                        <div class="price-info">
+                            <span class="current-price">$9.99</span>
+                            <span class="original-price">$13.99</span>
+                        </div>
+                        <button class="cart-btn" onclick="addToCart('juicy-lasting-tint-original')">
+                            <img src="Cart.jpg" alt="Add to cart" class="cart-icon" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="lip-tint">
+                <div class="product-image-container">
+                    <img src="Blur Fudge Tint.jpg" alt="Blur Fudge Tint" class="product-image" />
+                    <span class="discount-badge">29% off</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Blur Fudge Tint</h3>
+                    <div class="product-pricing">
+                        <div class="price-info">
+                            <span class="current-price">$9.99</span>
+                            <span class="original-price">$13.99</span>
+                        </div>
+                        <button class="cart-btn" onclick="addToCart('blur-fudge-tint')">
+                            <img src="Cart.jpg" alt="Add to cart" class="cart-icon" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="product-card" data-category="eyeshadow">
+                <div class="product-image-container">
+                    <img src="Bare layer palette.jpg" alt="Bare Layer Palette" class="product-image" />
+                    <span class="discount-badge">25% off</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Bare Layer Palette</h3>
+                    <div class="product-pricing">
+                        <div class="price-info">
+                            <span class="current-price">$18.75</span>
+                            <span class="original-price">$25.00</span>
+                        </div>
+                        <button class="cart-btn" onclick="addToCart('bare-layer-palette')">
+                            <img src="Cart.jpg" alt="Add to cart" class="cart-icon" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="eyeshadow">
+                <div class="product-image-container">
+                    <a href="Better than palette.html">
+                        <img src="Better than Palette.jpg" alt="Better Than Palette Light" class="product-image" />
+                    </a>
+                    <span class="discount-badge">30% off</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Better Than Palette Light and Glitter Garden</h3>
+                    <div class="product-pricing">
+                        <div class="price-info">
+                            <span class="current-price">$18.90</span>
+                            <span class="original-price">$27.00</span>
+                        </div>
+                        <button class="cart-btn" onclick="addToCart('better-than-palette-light')">
+                            <img src="Cart.jpg" alt="Add to cart" class="cart-icon" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="eyeshadow">
+                <div class="product-image-container">
+                    <img src="Better Than Palette Secret Garden.jpg" alt="Better Than Palette Secret" class="product-image" />
+                    <span class="discount-badge">27% off</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Better Than Palette Secret Garden</h3>
+                    <div class="product-pricing">
+                        <div class="price-info">
+                            <span class="current-price">$18.90</span>
+                            <span class="original-price">$26.00</span>
+                        </div>
+                        <button class="cart-btn" onclick="addToCart('better-than-palette-secret')">
+                            <img src="Cart.jpg" alt="Add to cart" class="cart-icon" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="eyeshadow">
+                <div class="product-image-container">
+                    <img src="Better Than Palette Energetic Series.jpg" alt="Better Than Palette Energetic" class="product-image" />
+                    <span class="discount-badge">25% off</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Better Than Palette Energetic Series</h3>
+                    <div class="product-pricing">
+                        <div class="price-info">
+                            <span class="current-price">$19.50</span>
+                            <span class="original-price">$26.00</span>
+                        </div>
+                        <button class="cart-btn" onclick="addToCart('better-than-palette-energetic')">
+                            <img src="Cart.jpg" alt="Add to cart" class="cart-icon" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="product-card" data-category="cushion">
+                <div class="product-image-container">
+                    <a href="Bare water cushion.html">
+                        <img src="Bare water cushion.jpg" alt="Better Than Palette Light" class="product-image" />
+                    </a>
+                    <span class="discount-badge">25% off</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Bare Water Cushion</h3>
+                    <div class="product-pricing">
+                        <div class="price-info">
+                            <span class="current-price">$12.00</span>
+                            <span class="original-price">$16.00</span>
+                        </div>
+                        <button class="cart-btn" onclick="addToCart('bare-water-cushion')">
+                            <img src="Cart.jpg" alt="Add to cart" class="cart-icon" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="mascara">
+                <div class="product-image-container">
+                    <a href="Mascara.html">
+                        <img src="Fix mascara.jpg" alt="Han All Fix Mascara" class="product-image" />
+                    </a>
+                    <span class="discount-badge">30% off</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Han All Fix Mascara 7g</h3>
+                    <div class="product-pricing">
+                        <div class="price-info">
+                            <span class="current-price">$10.50</span>
+                            <span class="original-price">$14.99</span>
+                        </div>
+                        <button class="cart-btn" onclick="addToCart('han-all-fix-mascara')">
+                            <img src="Cart.jpg" alt="Add to cart" class="cart-icon" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="mascara">
+                <div class="product-image-container">
+                    <img src="Bow cara.jpg" alt="Han All Brow Cara" class="product-image" />
+                    <span class="discount-badge">25% off</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Han All Brow Cara 9g</h3>
+                    <div class="product-pricing">
+                        <div class="price-info">
+                            <span class="current-price">$12.68</span>
+                            <span class="original-price">$16.90</span>
+                        </div>
+                        <button class="cart-btn" onclick="addToCart('han-all-brow-cara')">
+                            <img src="Cart.jpg" alt="Add to cart" class="cart-icon" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="lip-tint">
+                <div class="product-image-container">
+                    <img src="Peach Honey B.jpg" alt="Juicy Lasting Tint Peach" class="product-image" />
+                    <span class="discount-badge">29% off</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Juicy Lasting Tint #36 Peach Honey B</h3>
+                    <div class="product-pricing">
+                        <div class="price-info">
+                            <span class="current-price">$9.99</span>
+                            <span class="original-price">$13.99</span>
+                        </div>
+                        <button class="cart-btn" onclick="addToCart('juicy-lasting-tint-peach')">
+                            <img src="Cart.jpg" alt="Add to cart" class="cart-icon" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="product-card" data-category="eyeshadow">
+                <div class="product-image-container">
+                    <img src="Better than cheek.jpg" alt="Better Than Cheek" class="product-image" />
+                    <span class="discount-badge">25% off</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Better Than Cheek - Renewal</h3>
+                    <div class="product-pricing">
+                        <div class="price-info">
+                            <span class="current-price">$9.00</span>
+                            <span class="original-price">$12.00</span>
+                        </div>
+                        <button class="cart-btn" onclick="addToCart('better-than-cheek')">
+                            <img src="Cart.jpg" alt="Add to cart" class="cart-icon" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="eyeshadow">
+                <div class="product-image-container">
+                    <img src="Lighter.jpg" alt="See-Through Veil Lighter" class="product-image" />
+                    <span class="discount-badge">30% off</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">See-Through Veil Lighter</h3>
+                    <div class="product-pricing">
+                        <div class="price-info">
+                            <span class="current-price">$9.80</span>
+                            <span class="original-price">$13.99</span>
+                        </div>
+                        <button class="cart-btn" onclick="addToCart('see-through-veil')">
+                            <img src="Cart.jpg" alt="Add to cart" class="cart-icon" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="lip-tint">
+                <div class="product-image-container">
+                    <img src="sunset.jpg" alt="Glasting Water Tint Sunset" class="product-image" />
+                    <span class="discount-badge">25% off</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Glasting Water Tint #Sunset</h3>
+                    <div class="product-pricing">
+                        <div class="price-info">
+                            <span class="current-price">$9.99</span>
+                            <span class="original-price">$13.99</span>
+                        </div>
+                        <button class="cart-btn" onclick="addToCart('glasting-water-tint-sunset')">
+                            <img src="Cart.jpg" alt="Add to cart" class="cart-icon" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="lip-tint">
+                <div class="product-image-container">
+                    <img src="New bare series.jpg" alt="Juicy Lasting Tint New Bare" class="product-image" />
+                    <span class="discount-badge">29% off</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Juicy Lasting Tint New Bare Series</h3>
+                    <div class="product-pricing">
+                        <div class="price-info">
+                            <span class="current-price">$9.99</span>
+                            <span class="original-price">$13.99</span>
+                        </div>
+                        <button class="cart-btn" onclick="addToCart('juicy-lasting-tint-new-bare')">
+                            <img src="Cart.jpg" alt="Add to cart" class="cart-icon" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 5 -->
+            <div class="product-card" data-category="lip-tint">
+                <div class="product-image-container">
+                    <img src="Water tint.jpg" alt="Glasting Water Tint" class="product-image" />
+                    <span class="discount-badge">25% off</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Glasting Water Tint</h3>
+                    <div class="product-pricing">
+                        <div class="price-info">
+                            <span class="current-price">$9.99</span>
+                            <span class="original-price">$13.99</span>
+                        </div>
+                        <button class="cart-btn" onclick="addToCart('glasting-water-tint')">
+                            <img src="Cart.jpg" alt="Add to cart" class="cart-icon" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="lip-tint">
+                <div class="product-image-container">
+                    <img src="Bare juicy.jpg" alt="Juicy Lasting Tint Bare Juicy" class="product-image" />
+                    <span class="discount-badge">30% off</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Juicy Lasting Tint Bare Juicy Series 5.5g</h3>
+                    <div class="product-pricing">
+                        <div class="price-info">
+                            <span class="current-price">$9.99</span>
+                            <span class="original-price">$13.99</span>
+                        </div>
+                        <button class="cart-btn" onclick="addToCart('juicy-lasting-tint-bare-juicy')">
+                            <img src="Cart.jpg" alt="Add to cart" class="cart-icon" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="lip-tint">
+                <div class="product-image-container">
+                    <img src="Melting balm.jpg" alt="Glasting Melting Balm Dusty Nude" class="product-image" />
+                    <span class="discount-badge">25% off</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Glasting Melting Balm #Dusty On The Nude</h3>
+                    <div class="product-pricing">
+                        <div class="price-info">
+                            <span class="current-price">$9.99</span>
+                            <span class="original-price">$13.99</span>
+                        </div>
+                        <button class="cart-btn" onclick="addToCart('glasting-melting-balm-dusty-nude')">
+                            <img src="Cart.jpg" alt="Add to cart" class="cart-icon" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="lip-tint">
+                <div class="product-image-container">
+                    <img src="Lip balm.jpg" alt="Glasting Melting Balm New Bare" class="product-image" />
+                    <span class="discount-badge">29% off</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Glasting Melting Balm New Bare Series</h3>
+                    <div class="product-pricing">
+                        <div class="price-info">
+                            <span class="current-price">$9.99</span>
+                            <span class="original-price">$13.99</span>
+                        </div>
+                        <button class="cart-btn" onclick="addToCart('glasting-melting-balm-new-bare')">
+                            <img src="Cart.jpg" alt="Add to cart" class="cart-icon" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <h2 class="about-title">About Veluvia</h2>
+            <p class="about-subtitle">Inspired by Rom&nd. Made for beauty lovers.</p>
+            <img src="About.jpg" alt="About Veluvia" class="about-image" />
+        </section>
+
+        <!-- Story Section -->
+        <section class="story-section">
+            <h2 class="story-title">Our story</h2>
+            <p class="story-description">Veluvia was born from a love for Korean beauty and minimalist design. Inspired by Rom&nd, we aim to bring trendy, high-quality, and affordable makeup to everyone. From soft lip tints to glowing skin cushions - we want you to glow your way.</p>
+            
+            <div class="values-grid">
+                <div class="value-item">
+                    <img src="diamond.jpg" alt="Quality first" class="value-icon" />
+                    <span class="value-text">Quality first</span>
+                </div>
+                <div class="value-item">
+                    <img src="Beauty for all.jpg" alt="Beauty for all" class="value-icon" />
+                    <span class="value-text">Beauty for all</span>
+                </div>
+                <div class="value-item">
+                    <img src="Simple.jpg" alt="Simple & elegant" class="value-icon" />
+                    <span class="value-text">Simple & elegant</span>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h3 class="cta-title">Ready to glow with us?</h3>
+                <button class="shop-now-btn" onclick="scrollToProducts()">Shop Now</button>
+            </div>
+        </section>
+
+    <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">Veluvia</h3>
+                    <p class="footer-description">We offer the best products of the most recognized brands in the world.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Our store</h4>
+                    <a href="#" class="footer-link">About</a>
+                    <a href="#" class="footer-link">Products</a>
+                    <a href="#" class="footer-link">History</a>
+                    <a href="#" class="footer-link">Shop</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Information</h4>
+                    <a href="#" class="footer-link">Request a quote</a>
+                    <a href="#" class="footer-link">Find a dealer</a>
+                    <a href="#" class="footer-link">Contact us</a>
+                    <a href="#" class="footer-link">Services</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Follow us</h4>
+                    <div class="social-icons">
+                        <img src="facebook.png" alt="Facebook" class="social-icon" onclick="openSocialLink('facebook')"/>
+                        <img src="ig.jpg" alt="Instagram" class="social-icon" onclick="openSocialLink('instagram')"/>
+                        <img src="twitter.jpg" alt="Twitter" class="social-icon" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">
+                    © 2025 <strong>Veluvia</strong>. All rights reserved. | 
+                    <a href="#">Privacy Policy</a> | 
+                    <a href="#">Terms of Service</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

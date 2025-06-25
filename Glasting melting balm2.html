@@ -1,0 +1,954 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veluvia - Glasting Melting Balm #Dusty On The Nude</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: rgba(255, 192, 203, 0.37);
+            border-bottom: 1px solid rgba(179, 156, 156, 0.72);
+            padding: 8px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 48px;
+            height: 67px;
+        }
+
+        .logo {
+            font-family: 'Pristina', cursive;
+            font-size: 48px;
+            font-weight: 400;
+            color: #be6e6e;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .nav-link {
+            font-family: 'Times New Roman', serif;
+            font-size: 24px;
+            color: #686466;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #be6e6e;
+        }
+
+        .login-btn {
+            background-color: #ffffff;
+            border-radius: 23px;
+            padding: 12px 24px;
+            font-family: 'Times New Roman', serif;
+            font-size: 24px;
+            color: #686466;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: #ffc0cb;
+            color: #be6e6e;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            padding: clamp(30px, 6vw, 67px) clamp(20px, 6vw, 75px);
+            gap: clamp(30px, 6vw, 66px);
+            flex-wrap: wrap;
+        }
+
+        .product-image-section {
+            flex: 1;
+            min-width: 300px;
+            max-width: 532px;
+        }
+
+        .image-container {
+            position: relative;
+            margin-bottom: clamp(50px, 10vw, 100px);
+        }
+
+        .product-image {
+            width: 100%;
+            max-width: 794px;
+            height: 700px;
+            aspect-ratio: 794/529;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+
+        .nav-arrow {
+            position: absolute;
+            top: 32px;
+            left: 29px;
+            width: clamp(30px, 4vw, 39px);
+            height: clamp(30px, 4vw, 39px);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-arrow:hover {
+            transform: scale(1.1);
+        }
+
+        .reviews-section {
+            margin-top: clamp(50px, 10vw, 100px);
+        }
+
+        .reviews-title {
+            font-size: clamp(28px, 4vw, 40px);
+            font-family: 'Roboto', sans-serif;
+            color: #000000;
+            margin-bottom: clamp(40px, 8vw, 72px);
+        }
+
+        .rating-score {
+            font-size: clamp(28px, 4vw, 40px);
+            font-family: 'Roboto', sans-serif;
+            color: #000000;
+            margin-bottom: clamp(35px, 6vw, 57px);
+            text-align: center;
+        }
+
+        .rating-stars {
+            display: flex;
+            gap: clamp(10px, 2vw, 17px);
+            margin-bottom: 50px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .star {
+            width: clamp(40px, 5vw, 54px);
+            height: clamp(40px, 5vw, 54px);
+        }
+
+        /* Product Details Section */
+        .product-details {
+            flex: 1;
+            min-width: 300px;
+            max-width: 733px;
+        }
+
+        .product-title {
+            font-size: clamp(24px, 4vw, 40px);
+            font-family: 'Roboto', sans-serif;
+            color: #000000;
+            margin-bottom: clamp(20px, 3vw, 29px);
+            line-height: 1.2;
+        }
+
+        .price-section {
+            margin-bottom: clamp(40px, 6vw, 59px);
+        }
+
+        .price {
+            font-size: clamp(20px, 3vw, 32px);
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.2;
+        }
+
+        .sale-price {
+            color: #f32222;
+        }
+
+        .original-price {
+            color: #000000;
+            text-decoration: line-through;
+            margin-left: 10px;
+        }
+
+        .rating-display {
+            margin-bottom: clamp(50px, 8vw, 75px);
+        }
+
+        .rating-image {
+            width: clamp(100px, 15vw, 145px);
+            height: auto;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #e5cfcf;
+            margin: 25px 0;
+        }
+
+        .color-section {
+            margin-bottom: clamp(35px, 5vw, 53px);
+        }
+
+        .color-label {
+            font-size: clamp(18px, 2.5vw, 24px);
+            font-family: 'Roboto', sans-serif;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        .color-options {
+            width: clamp(80px, 10vw, 120px);
+            height: auto;
+        }
+
+        .quantity-section {
+            margin-bottom: clamp(25px, 3vw, 31px);
+        }
+
+        .quantity-label {
+            font-size: clamp(18px, 2.5vw, 24px);
+            font-family: 'Roboto', sans-serif;
+            color: #000000;
+            margin-bottom: 11px;
+        }
+
+        .quantity-controls {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .quantity-btn {
+            width: clamp(40px, 5vw, 51px);
+            height: clamp(45px, 6vw, 56px);
+            border: 1px solid #b5b2b2;
+            border-radius: 8px;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: clamp(24px, 3vw, 36px);
+            color: #000000;
+            transition: background-color 0.3s ease;
+            min-width: 44px;
+        }
+
+        .quantity-btn:hover {
+            background-color: #f0f0f0;
+        }
+
+        .quantity-input {
+            width: clamp(40px, 5vw, 51px);
+            height: clamp(45px, 6vw, 56px);
+            border: 1px solid #b5b2b2;
+            border-radius: 8px;
+            text-align: center;
+            font-size: clamp(18px, 2.5vw, 24px);
+            font-family: 'Roboto', sans-serif;
+            color: #000000;
+        }
+
+        .add-to-cart {
+            background-color: #ffc0cb;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 719px;
+            height: clamp(55px, 7vw, 69px);
+            border: none;
+            font-size: clamp(20px, 3vw, 32px);
+            font-family: 'Roboto', sans-serif;
+            color: #000000;
+            cursor: pointer;
+            margin-bottom: clamp(25px, 4vw, 36px);
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: #ffb6c1;
+        }
+
+        .product-description {
+            font-size: clamp(18px, 3vw, 32px);
+            font-family: 'Roboto', sans-serif;
+            color: #000000;
+            line-height: 1.2;
+            margin-bottom: clamp(80px, 12vw, 152px);
+        }
+
+        .write-review-btn {
+            background-color: #ffc0cb;
+            border-radius: 10px;
+            width: clamp(200px, 25vw, 247px);
+            height: clamp(55px, 7vw, 68px);
+            border: none;
+            font-size: clamp(18px, 3vw, 32px);
+            font-family: 'Roboto', sans-serif;
+            color: #ffffff;
+            cursor: pointer;
+            float: right;
+            transition: background-color 0.3s ease;
+        }
+
+        .write-review-btn:hover {
+            background-color: #ffb6c1;
+        }
+
+        /* Related Products Section */
+        .related-products {
+            padding: 0 clamp(20px, 6vw, 75px);
+        }
+
+        .section-divider {
+            height: 1px;
+            background-color: #e5cfcf;
+            margin: 50px 0;
+        }
+
+        .section-title {
+            font-size: clamp(28px, 4vw, 40px);
+            font-family: 'Roboto', sans-serif;
+            color: #000000;
+            text-align: center;
+            margin-bottom: clamp(50px, 8vw, 95px);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: clamp(20px, 3vw, 33px);
+            margin-bottom: 50px;
+        }
+
+        .product-card {
+            background-color: #f3f3f3;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease;
+            max-width: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image-container {
+            position: relative;
+            width: 100%;
+            height: clamp(200px, 25vw, 300px);
+        }
+
+        .product-card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .discount-badge {
+            position: absolute;
+            top: 18px;
+            left: 21px;
+            background-color: #ffffff;
+            color: #be6e6e;
+            font-size: clamp(10px, 1.5vw, 12px);
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            padding: 6px 13px;
+            border-radius: 13px;
+        }
+
+        .product-info {
+            padding: clamp(15px, 2vw, 20px);
+        }
+
+        .product-name {
+            font-size: clamp(14px, 1.8vw, 16px);
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            color: #000000;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .product-price-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .product-price {
+            font-size: clamp(14px, 1.8vw, 16px);
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            color: #be6e6e;
+        }
+
+        .product-original-price {
+            font-size: clamp(10px, 1.5vw, 12px);
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            color: #868686;
+            text-decoration: line-through;
+            margin-left: clamp(10px, 2vw, 20px);
+        }
+
+        .cart-btn {
+            background-color: #ffc0cb;
+            border-radius: 8px;
+            width: clamp(35px, 4vw, 46px);
+            height: clamp(30px, 4vw, 38px);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .cart-btn:hover {
+            background-color: #ffb6c1;
+        }
+
+        .cart-btn img {
+            width: clamp(18px, 2.5vw, 26px);
+            height: clamp(18px, 2.5vw, 26px);
+        }
+
+       
+        .footer {
+            background-color: #ffeeee;
+            padding: clamp(25px, 4vw, 33px) clamp(20px, 5vw, 64px) clamp(30px, 5vw, 43px);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: clamp(30px, 5vw, 50px);
+            margin-bottom: 25px;
+        }
+
+        .footer-brand {
+            max-width: 311px;
+        }
+
+        .footer-logo {
+            font-family: 'Pristina', cursive;
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: #be6e6e;
+            margin-bottom: 7px;
+        }
+
+        .footer-description {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(16px, 2vw, 20px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: #666161;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-title {
+            font-family: 'Inria Sans', sans-serif;
+            font-size: clamp(24px, 3vw, 36px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: #be6e6e;
+            margin-bottom: 8px;
+        }
+
+        .footer-link {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(16px, 2vw, 20px);
+            font-weight: 400;
+            line-height: 1.25;
+            color: #676161;
+            text-decoration: none;
+            margin-bottom: 7px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #be6e6e;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: clamp(15px, 3vw, 27px);
+            margin-top: 14px;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            width: clamp(20px, 3vw, 27px);
+            height: clamp(20px, 3vw, 27px);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .copyright {
+            font-family: 'Roboto', sans-serif;
+            font-size: clamp(16px, 2vw, 20px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: #744a33;
+        }
+
+        .copyright a {
+            color: #473eae;
+            text-decoration: none;
+        }
+
+        .copyright a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+         @media (max-width: 768px) {
+            .header-content {
+                padding: 0 20px;
+                flex-direction: column;
+                height: auto;
+                gap: 20px;
+            }
+
+            .nav-menu {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            
+            .main-content {
+                flex-direction: column;
+                padding: 30px 20px;
+            }
+            
+            .product-image-section,
+            .product-details {
+                max-width: 100%;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .write-review-btn {
+                float: none;
+                width: 100%;
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .quantity-controls {
+                justify-content: center;
+            }
+            
+            .product-description {
+                margin-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .container {
+                padding: 0 10px;
+            }
+            
+            .main-content {
+                padding: 20px 10px;
+            }
+        }
+
+        /* Touch improvements for mobile */
+        @media (hover: none) and (pointer: coarse) {
+            .product-card:hover,
+            .product-card:active {
+                transform: scale(0.98);
+                transition: transform 0.1s ease;
+            }
+            
+            .add-to-cart,
+            .write-review-btn,
+            .cart-btn,
+            .quantity-btn {
+                min-height: 44px;
+                min-width: 44px;
+            }
+        }
+
+        /* Loading states */
+        .loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        /* Accessibility improvements */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles for keyboard navigation */
+        .nav-item:focus,
+        .login-btn:focus,
+        .add-to-cart:focus,
+        .write-review-btn:focus,
+        .cart-btn:focus,
+        .quantity-btn:focus {
+            outline: 2px solid #be6e6e;
+            outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+            .header,
+            .footer,
+            .related-products {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <a href="#" class="logo">Veluvia</a>
+                <nav class="nav-menu">
+                    <a href="#" class="nav-link">HOME</a>
+                    <a href="#" class="nav-link">SHOP</a>
+                    <a href="#" class="nav-link">ABOUT</a>
+                    <a href="#" class="nav-link">CONTACT</a>
+                    <a href="#" class="login-btn">LOG IN</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            
+            <!-- Product Image Section -->
+            <div class="product-image-section">
+                <div class="image-container">
+                    <img src="Page2.jpg" alt="Glasting Melting Balm Product" class="product-image" />
+                    <a href="homepage.html">
+                        <img src="arrow.png" alt="Back to Homepage" class="nav-arrow" />
+                    </a>
+                </div>
+                
+                <div class="reviews-section">
+                    <h2 class="reviews-title">Customer reviews</h2>
+                    <div class="rating-score">4.9</div>
+                    <div class="rating-stars">
+                        <img src="star.jpg" alt="Star" class="star" />
+                        <img src="star.jpg" alt="Star" class="star" />
+                        <img src="star.jpg" alt="Star" class="star" />
+                        <img src="star.jpg" alt="Star" class="star" />
+                        <img src="star.jpg" alt="Star" class="star" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Details Section -->
+            <div class="product-details">
+                <h1 class="product-title">Glasting Melting Balm #Dusty On The Nude</h1>
+                <div class="price-section">
+                    <span class="price sale-price">$9.99 USD</span>
+                    <span class="price original-price">$13.99</span>
+                </div>
+                
+                <div class="rating-display">
+                    <img src="product rating.jpg" alt="Product Rating" class="rating-image" />
+                </div>
+                
+                <div class="divider"></div>
+                
+                <div class="color-section">
+                    <div class="color-label">Color</div>
+                    <img src="color2.jpg" alt="Color Options" class="color-options" />
+                </div>
+                
+                <div class="quantity-section">
+                    <div class="quantity-label">Quantity</div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
+                        <input type="number" value="1" min="1" class="quantity-input" id="quantity" />
+                        <button class="quantity-btn" onclick="increaseQuantity()">+</button>
+                    </div>
+                </div>
+                
+                <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                
+                <p class="product-description">
+                    The Glasting Melting Balm is a moisturizing balm with plant-based moisturizing oil that does not dry out! It provides a transparent and smooth watery glow without feeling stuffy.
+                    Dusty On The Nude Series offers Natural-Nude color lips for gorgeous make up. Experience the ultimate beauty of calm-nude glasting lips! 
+                </p>
+                <button class="write-review-btn" onclick="writeReview()">Write a review</button>
+            </div>
+        </main>
+
+        <!-- Related Products Section -->
+        <section class="related-products">
+            <div class="section-divider"></div>
+            <h2 class="section-title">You may also like</h2>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Glasting color gloss.jpg" alt="Glasting color gloss" class="product-card-image" />
+                        <span class="discount-badge">51% off</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Glasting Color Gloss</h3>
+                        <div class="product-price-row">
+                            <div>
+                                <span class="product-price">$9.79</span>
+                                <span class="product-original-price">$13.99</span>
+                            </div>
+                            <button class="cart-btn" onclick="addToCartQuick('product1')">
+                                <img src="Cart.jpg" alt="Add to Cart" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Glasting Melting Balm Original Series.jpg" alt="Glasting Melting Balm #Original Series" class="product-card-image" />
+                        <span class="discount-badge">29% off</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Glasting Melting Balm #Original Series</h3>
+                        <div class="product-price-row">
+                            <div>
+                                <span class="product-price">$6.90</span>
+                                <span class="product-original-price">$13.99</span>
+                            </div>
+                            <button class="cart-btn" onclick="addToCartQuick('product2')">
+                                <img src="Cart.jpg" alt="Add to Cart" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Glasting Melting Balm New Bare Series.jpg" alt="Glasting Melting Balm New Bare Series" class="product-card-image" />
+                        <span class="discount-badge">29% off</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Glasting Melting Balm New Bare Series</h3>
+                        <div class="product-price-row">
+                            <div>
+                                <span class="product-price">$9.79</span>
+                                <span class="product-original-price">$13.99</span>
+                            </div>
+                            <button class="cart-btn" onclick="addToCartQuick('product3')">
+                                <img src="Cart.jpg" alt="Add to Cart" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Volume Hack Duo (Melting Balm + Color Gloss).jpg" alt="Volume Hack Duo (Melting Balm + Color Gloss)" class="product-card-image" />
+                        <span class="discount-badge">29% off</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Volume Hack Duo (Melting Balm + Color Gloss)</h3>
+                        <div class="product-price-row">
+                            <div>
+                                <span class="product-price">$18.99</span>
+                                <span class="product-original-price">$27.98</span>
+                            </div>
+                            <button class="cart-btn" onclick="addToCartQuick('product4')">
+                                <img src="Cart.jpg" alt="Add to Cart" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Juicy Lasting Tint Bare Juicy Series 5.5g.jpg" alt="Juicy Lasting Tint Bare Juicy Series 5.5g" class="product-card-image" />
+                        <span class="discount-badge">25% off</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Juicy Lasting Tint Bare Juicy Series 5.5g</h3>
+                        <div class="product-price-row">
+                            <div>
+                                <span class="product-price">$9.79</span>
+                                <span class="product-original-price">$13.99</span>
+                            </div>
+                            <button class="cart-btn" onclick="addToCartQuick('product5')">
+                                <img src="Cart.jpg" alt="Add to Cart" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Juicy Lasting Tint Ripe Fruits Series.jpg" alt="Juicy Lasting Tint Ripe Fruits Series" class="product-card-image" />
+                        <span class="discount-badge">30% off</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Juicy Lasting Tint Ripe Fruits Series</h3>
+                        <div class="product-price-row">
+                            <div>
+                                <span class="product-price">$9.79</span>
+                                <span class="product-original-price">$13.99</span>
+                            </div>
+                            <button class="cart-btn" onclick="addToCartQuick('product6')">
+                                <img src="Cart.jpg" alt="Add to Cart" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Glasting water Tint.jpg" alt="Glasting Water Tint #Sunset" class="product-card-image" />
+                        <span class="discount-badge">25% off</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Glasting Water Tint #Sunset</h3>
+                        <div class="product-price-row">
+                            <div>
+                                <span class="product-price">$9.79</span>
+                                <span class="product-original-price">$13.99</span>
+                            </div>
+                            <button class="cart-btn" onclick="addToCartQuick('product7')">
+                                <img src="Cart.jpg" alt="Add to Cart" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="lipstick.jpg" alt="lipstick" class="product-card-image" />
+                        <span class="discount-badge">29% off</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Glasting Melting Balm New Bare Series</h3>
+                        <div class="product-price-row">
+                            <div>
+                                <span class="product-price">$9.99</span>
+                                <span class="product-original-price">$13.99</span>
+                            </div>
+                            <button class="cart-btn" onclick="addToCartQuick('product8')">
+                                <img src="Cart.jpg" alt="Add to Cart" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">Veluvia</h3>
+                    <p class="footer-description">We offer the best products of the most recognized brands in the world.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Our store</h4>
+                    <a href="#" class="footer-link">About</a>
+                    <a href="#" class="footer-link">Products</a>
+                    <a href="#" class="footer-link">History</a>
+                    <a href="#" class="footer-link">Shop</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Information</h4>
+                    <a href="#" class="footer-link">Request a quote</a>
+                    <a href="#" class="footer-link">Find a dealer</a>
+                    <a href="#" class="footer-link">Contact us</a>
+                    <a href="#" class="footer-link">Services</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Follow us</h4>
+                    <div class="social-icons">
+                        <img src="facebook.png" alt="Facebook" class="social-icon" onclick="openSocialLink('facebook')"/>
+                        <img src="ig.jpg" alt="Instagram" class="social-icon" onclick="openSocialLink('instagram')"/>
+                        <img src="twitter.jpg" alt="Twitter" class="social-icon" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">
+                    © 2025 <strong>Veluvia</strong>. All rights reserved. | 
+                    <a href="#">Privacy Policy</a> | 
+                    <a href="#">Terms of Service</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

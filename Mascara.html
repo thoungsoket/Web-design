@@ -1,0 +1,937 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veluvia - Han all fix mascara</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: rgba(255, 192, 203, 0.37);
+            border-bottom: 1px solid rgba(179, 156, 156, 0.72);
+            padding: 8px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 48px;
+            height: 67px;
+        }
+
+        .logo {
+            font-family: 'Pristina', cursive;
+            font-size: 48px;
+            font-weight: 400;
+            color: #be6e6e;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .nav-link {
+            font-family: 'Times New Roman', serif;
+            font-size: 24px;
+            color: #686466;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #be6e6e;
+        }
+
+        .login-btn {
+            background-color: #ffffff;
+            border-radius: 23px;
+            padding: 12px 24px;
+            font-family: 'Times New Roman', serif;
+            font-size: 24px;
+            color: #686466;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: #ffc0cb;
+            color: #be6e6e;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 73px 78px 0;
+            display: flex;
+            gap: 60px;
+            margin-bottom: 83px;
+        }
+
+        /* Product Images */
+        .product-images {
+            flex: 1;
+            max-width: 522px;
+        }
+
+        .main-image {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .main-image img {
+            width: 550px;
+            height: 750px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 18px;
+            left: 31px;
+            width: 37px;
+            height: 37px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .back-btn img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .thumbnail-gallery {
+            display: flex;
+            gap: 7px;
+        }
+
+        .thumbnail {
+            width: 105px;
+            height: 180px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .thumbnail:hover {
+            transform: scale(1.05);
+        }
+
+        .thumbnail img {
+            width: 140px;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* Product Info */
+        .product-info {
+            flex: 1;
+            max-width: 739px;
+            padding-left: 17px;
+        }
+
+        .product-title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 40px;
+            font-weight: 400;
+            line-height: 46px;
+            color: #000000;
+            margin-bottom: 22px;
+        }
+
+        .price-section {
+            margin-bottom: 39px;
+        }
+
+        .price {
+            font-family: 'Roboto', sans-serif;
+            font-size: 32px;
+            line-height: 38px;
+        }
+
+        .current-price {
+            color: #f32222;
+            font-weight: 400;
+        }
+
+        .original-price {
+            color: #000000;
+            font-weight: 400;
+            margin-left: 10px;
+            text-decoration: line-through;
+        }
+
+        .rating {
+            margin-bottom: 21px;
+        }
+
+        .rating img {
+            width: 145px;
+            height: 54px;
+        }
+
+        .divider {
+            width: 100%;
+            height: 1px;
+            background-color: #e5cfcf;
+            margin: 48px 0 31px;
+        }
+
+        .quantity-section {
+            margin-bottom: 54px;
+        }
+
+        .quantity-label {
+            font-family: 'Roboto', sans-serif;
+            font-size: 24px;
+            line-height: 29px;
+            color: #000000;
+            margin-bottom: 11px;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .quantity-btn {
+            width: 51px;
+            height: 56px;
+            border: 1px solid #b5b2b2;
+            border-radius: 8px;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 36px;
+            color: #000000;
+            transition: background-color 0.3s ease;
+        }
+
+        .quantity-btn:hover {
+            background-color: #f0f0f0;
+        }
+
+        .quantity-input {
+            width: 51px;
+            height: 56px;
+            border: 1px solid #b5b2b2;
+            border-radius: 8px;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            font-size: 24px;
+            line-height: 29px;
+            color: #000000;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            height: 69px;
+            background-color: #ffc0cb;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 32px;
+            line-height: 38px;
+            color: #000000;
+            cursor: pointer;
+            margin-bottom: 71px;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: #ffb6c1;
+        }
+
+        .product-description {
+            font-family: 'Roboto', sans-serif;
+            font-size: 32px;
+            line-height: 37px;
+            color: #000000;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            padding: 0 75px;
+            margin-bottom: 51px;
+        }
+
+        .reviews-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 64px;
+        }
+
+        .reviews-left {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .reviews-title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 40px;
+            line-height: 47px;
+            color: #000000;
+        }
+
+        .rating-score {
+            font-family: 'Roboto', sans-serif;
+            font-size: 40px;
+            line-height: 47px;
+            color: #000000;
+            margin-bottom: 25px;
+        }
+
+        .rating-stars {
+            display: flex;
+            gap: 17px;
+        }
+
+        .rating-stars img {
+            width: 54px;
+            height: 54px;
+        }
+
+        .write-review-btn {
+            background-color: #ffc0cb;
+            border: none;
+            border-radius: 10px;
+            padding: 15px 24px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 32px;
+            line-height: 38px;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .write-review-btn:hover {
+            background-color: #ffb6c1;
+        }
+
+        .section-divider {
+            width: 100%;
+            height: 1px;
+            background-color: #e5cfcf;
+            margin: 0 79px 49px 79px;
+        }
+
+        /* You May Also Like Section */
+        .recommendations {
+            padding: 0 75px;
+            margin-bottom: 176px;
+        }
+
+        .recommendations-title {
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            font-size: 40px;
+            line-height: 47px;
+            color: #000000;
+            margin-bottom: 78px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            margin-bottom: 56px;
+        }
+
+        .product-card {
+            background-color: #f3f3f3;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image-container {
+            position: relative;
+            height: 300px;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .discount-badge {
+            position: absolute;
+            top: 18px;
+            left: 22px;
+            background-color: #ffffff;
+            color: #be6e6e;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 15px;
+            padding: 6px 11px;
+            border-radius: 13px;
+        }
+
+        .product-details {
+            padding: 20px;
+        }
+
+        .product-name {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 20px;
+            color: #000000;
+            margin-bottom: 15px;
+        }
+
+        .product-price-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+        }
+
+        .current-product-price {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 20px;
+            color: #be6e6e;
+        }
+
+        .original-product-price {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 15px;
+            color: #868686;
+            text-decoration: line-through;
+        }
+
+        .cart-btn {
+            width: 46px;
+            height: 38px;
+            background-color: #ffc0cb;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .cart-btn:hover {
+            background-color: #ffb6c1;
+        }
+
+        .cart-btn img {
+            width: 26px;
+            height: 26px;
+        }
+
+        /* footer styles */
+        .footer {
+            background-color: #ffeeee;
+            padding: clamp(25px, 4vw, 33px) clamp(20px, 5vw, 64px) clamp(30px, 5vw, 43px);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: clamp(30px, 5vw, 50px);
+            margin-bottom: 25px;
+        }
+
+        .footer-brand {
+            max-width: 311px;
+        }
+
+        .footer-logo {
+            font-family: 'Pristina', cursive;
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: #be6e6e;
+            margin-bottom: 7px;
+        }
+
+        .footer-description {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(16px, 2vw, 20px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: #666161;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-title {
+            font-family: 'Inria Sans', sans-serif;
+            font-size: clamp(24px, 3vw, 36px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: #be6e6e;
+            margin-bottom: 8px;
+        }
+
+        .footer-link {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(16px, 2vw, 20px);
+            font-weight: 400;
+            line-height: 1.25;
+            color: #676161;
+            text-decoration: none;
+            margin-bottom: 7px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #be6e6e;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: clamp(15px, 3vw, 27px);
+            margin-top: 14px;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            width: clamp(20px, 3vw, 27px);
+            height: clamp(20px, 3vw, 27px);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .copyright {
+            font-family: 'Roboto', sans-serif;
+            font-size: clamp(16px, 2vw, 20px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: #744a33;
+        }
+
+        .copyright a {
+            color: #473eae;
+            text-decoration: none;
+        }
+
+        .copyright a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+         @media (max-width: 768px) {
+            .header-content {
+                padding: 0 20px;
+                flex-direction: column;
+                height: auto;
+                gap: 20px;
+            }
+
+            .nav-menu {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            .main-content {
+                flex-direction: column;
+                padding: 40px 20px 0;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                padding: 0 20px;
+            }
+
+            .logo {
+                font-size: 36px;
+            }
+        }    
+            
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <a href="#" class="logo">Veluvia</a>
+                <nav class="nav-menu">
+                    <a href="#" class="nav-link">HOME</a>
+                    <a href="#" class="nav-link">SHOP</a>
+                    <a href="#" class="nav-link">ABOUT</a>
+                    <a href="#" class="nav-link">CONTACT</a>
+                    <a href="#" class="login-btn">LOG IN</a>
+                </nav>
+            </div>
+        </header>
+         <!-- Main Content -->
+        <main class="main-content">
+            <!-- Product Images -->
+            <div class="product-images">
+                <div class="main-image">
+                    <img id="mainProductImage" src="Fix mascara.jpg" alt="Han All Fix Mascara"/>
+                    <a href="homepage.html" class="back-btn">
+                        <img src="arrow.png" alt="Back to Homepage" />
+                    </a>
+                </div>
+                <div class="thumbnail-gallery">
+                    <div class="thumbnail" onclick="changeMainImage('Mascara1.jpg')">
+                        <img src="Mascara1.jpg" alt="Product view 1" />
+                    </div>
+                    <div class="thumbnail" onclick="changeMainImage('Mascara2.jpg')">
+                        <img src="Mascara2.jpg" alt="Product view 2" />
+                    </div>
+                    <div class="thumbnail" onclick="changeMainImage('Mascara3.jpg')">
+                        <img src="Mascara3.jpg" alt="Product view 3" />
+                    </div>
+                    <div class="thumbnail" onclick="changeMainImage('Mascara4.jpg')">
+                        <img src="Mascara4.jpg" alt="Product view 4" />
+                    </div>
+                    <div class="thumbnail" onclick="changeMainImage('Mascara5.jpg')">
+                        <img src="Mascara5.jpg" alt="Product view 5" />
+                    </div>
+                    <div class="thumbnail" onclick="changeMainImage('Mascara6.jpg')">
+                        <img src="Mascara6.jpg" alt="Product view 6" />
+                    </div>
+                    <div class="thumbnail" onclick="changeMainImage('Mascara7.jpg')">
+                        <img src="Mascara7.jpg" alt="Product view 7" />
+                    </div>
+                    <div class="thumbnail" onclick="changeMainImage('Mascara8.jpg')">
+                        <img src="Mascara8.jpg" alt="Product view 8" />
+                    </div>
+                    <div class="thumbnail" onclick="changeMainImage('Mascara9.jpg')">
+                        <img src="Mascara9.jpg" alt="Product view 9" />
+                    </div>
+                    <div class="thumbnail" onclick="changeMainImage('Mascara10.jpg')">
+                        <img src="Mascara10.jpg" alt="Product view 10" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="product-info">
+                <h1 class="product-title">Han All Fix Mascara 7g<br />Glitter Garden</h1>
+                <div class="price-section">
+                    <div class="price">
+                        <span class="current-price">$10.49 USD</span>
+                        <span class="original-price">$14.99</span>
+                    </div>
+                </div>
+                <div class="rating">
+                    <img src="product rating.jpg" alt="5 star rating" />
+                </div>
+                <div class="divider"></div>
+                <div class="quantity-section">
+                    <label class="quantity-label">Quantity</label>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
+                        <input type="number" class="quantity-input" id="quantityInput" value="1" min="1" max="99" />
+                        <button class="quantity-btn" onclick="increaseQuantity()">+</button>
+                    </div>
+                </div>
+                <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                <p class="product-description">
+                    Rom&nd Han All Fix Mascara delivers sharp styling with long-lasting hold and all-day definition.
+                </p>
+            </div>
+        </main>
+
+        <!-- Reviews Section -->
+        <section class="reviews-section">
+            <div class="reviews-header">
+                <div class="reviews-left">
+                    <h2 class="reviews-title">Customer reviews</h2>
+                    <div class="rating-score">4.7</div>
+                    <div class="rating-stars">
+                        <img src="star.jpg" alt="Star" />
+                        <img src="star.jpg" alt="Star" />
+                        <img src="star.jpg" alt="Star" />
+                        <img src="star.jpg" alt="Star" />
+                        <img src="star.jpg" alt="Star" />
+                    </div>
+                </div>
+                <button class="write-review-btn" onclick="writeReview()">Write a review</button>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- You May Also Like Section -->
+        <section class="recommendations">
+            <h2 class="recommendations-title">You may also like</h2>
+            <div class="product-grid">
+                <!-- Row 1 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Han All Brow Cara 9g.jpg" alt="Han All Brow Cara 9g" />
+                        <span class="discount-badge">51% off</span>
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">Han All Brow Cara 9g</h3>
+                        <div class="product-price-row">
+                            <div class="product-price">
+                                <span class="current-product-price">$11.83</span>
+                                <span class="original-product-price">$16.90</span>
+                            </div>
+                            <button class="cart-btn" onclick="addProductToCart('secret-garden')">
+                                <img src="Cart.jpg" alt="Add to cart" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Lip Mate Pencil.jpg" alt="Lip Mate Pencil" />
+                        <span class="discount-badge">29% off</span>
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">Lip Mate Pencil</h3>
+                        <div class="product-price-row">
+                            <div class="product-price">
+                                <span class="current-product-price">$9.79</span>
+                                <span class="original-product-price">$13.99</span>
+                            </div>
+                            <button class="cart-btn" onclick="addProductToCart('cheek-renewal')">
+                                <img src="Cart.jpg" alt="Add to cart" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="The Universe Liquid Glitter.jpg" alt="The Universe Liquid Glitter" />
+                        <span class="discount-badge">29% off</span>
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">The Universe Liquid Glitter</h3>
+                        <div class="product-price-row">
+                            <div class="product-price">
+                                <span class="current-product-price">$8.75</span>
+                                <span class="original-product-price">$12.50</span>
+                            </div>
+                            <button class="cart-btn" onclick="addProductToCart('eyes-music')">
+                                <img src="Cart.jpg" alt="Add to cart" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Twinkle Pen Liner.jpg" alt="Twinkle Pen Liner" />
+                        <span class="discount-badge">29% off</span>
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">Twinkle Pen Liner</h3>
+                        <div class="product-price-row">
+                            <div class="product-price">
+                                <span class="current-product-price">$7.00</span>
+                                <span class="original-product-price">$10.00</span>
+                            </div>
+                            <button class="cart-btn" onclick="addProductToCart('eyes-milk')">
+                                <img src="Cart.jpg" alt="Add to cart" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Better Than Eyes Milk Edition 3.jpg" alt="Better Than Eyes Milk Edition" />
+                        <span class="discount-badge">25% off</span>
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">Better Than Eyes Milk Edition</h3>
+                        <div class="product-price-row">
+                            <div class="product-price">
+                                <span class="current-product-price">$11.90</span>
+                                <span class="original-product-price">$17.00</span>
+                            </div>
+                            <button class="cart-btn" onclick="addProductToCart('energetic-series')">
+                                <img src="Cart.jpg" alt="Add to cart" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Better Than Palette Energetic Series 3.jpg" alt="Better Than Palette Energetic Series" />
+                        <span class="discount-badge">30% off</span>
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">Better Than Palette Energetic Series</h3>
+                        <div class="product-price-row">
+                            <div class="product-price">
+                                <span class="current-product-price">$18.20</span>
+                                <span class="original-product-price">$26.00</span>
+                            </div>
+                            <button class="cart-btn" onclick="addProductToCart('secret-garden-2')">
+                                <img src="Cart.jpg" alt="Add to cart" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Glasting Color Gloss 2.jpg" alt="Glasting Color Gloss" />
+                        <span class="discount-badge">25% off</span>
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">Glasting Color Gloss</h3>
+                        <div class="product-price-row">
+                            <div class="product-price">
+                                <span class="current-product-price">$9.79</span>
+                                <span class="original-product-price">$13.99</span>
+                            </div>
+                            <button class="cart-btn" onclick="addProductToCart('cheek-renewal-2')">
+                                <img src="Cart.jpg" alt="Add to cart" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Glasting Water Tint 2.jpg" alt="Glasting Water Tint" />
+                        <span class="discount-badge">29% off</span>
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">Glasting Water Tint</h3>
+                        <div class="product-price-row">
+                            <div class="product-price">
+                                <span class="current-product-price">$9.79</span>
+                                <span class="original-product-price">$13.99</span>
+                            </div>
+                            <button class="cart-btn" onclick="addProductToCart('eyes-milk-2')">
+                                <img src="Cart.jpg" alt="Add to cart" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">Veluvia</h3>
+                    <p class="footer-description">We offer the best products of the most recognized brands in the world.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Our store</h4>
+                    <a href="#" class="footer-link">About</a>
+                    <a href="#" class="footer-link">Products</a>
+                    <a href="#" class="footer-link">History</a>
+                    <a href="#" class="footer-link">Shop</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Information</h4>
+                    <a href="#" class="footer-link">Request a quote</a>
+                    <a href="#" class="footer-link">Find a dealer</a>
+                    <a href="#" class="footer-link">Contact us</a>
+                    <a href="#" class="footer-link">Services</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Follow us</h4>
+                    <div class="social-icons">
+                        <img src="facebook.png" alt="Facebook" class="social-icon" onclick="openSocialLink('facebook')"/>
+                        <img src="ig.jpg" alt="Instagram" class="social-icon" onclick="openSocialLink('instagram')"/>
+                        <img src="twitter.jpg" alt="Twitter" class="social-icon" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">
+                    © 2025 <strong>Veluvia</strong>. All rights reserved. | 
+                    <a href="#">Privacy Policy</a> | 
+                    <a href="#">Terms of Service</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
