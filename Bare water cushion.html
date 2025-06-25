@@ -1,0 +1,1507 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veluvia - Bare water cushion</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: rgba(255, 192, 203, 0.37);
+            border-bottom: 1px solid rgba(179, 156, 156, 0.72);
+            padding: 8px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 48px;
+            height: 67px;
+        }
+
+        .logo {
+            font-family: 'Pristina', cursive;
+            font-size: 48px;
+            font-weight: 400;
+            color: #be6e6e;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .nav-link {
+            font-family: 'Times New Roman', serif;
+            font-size: 24px;
+            color: #686466;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #be6e6e;
+        }
+
+        .login-btn {
+            background-color: #ffffff;
+            border-radius: 23px;
+            padding: 12px 24px;
+            font-family: 'Times New Roman', serif;
+            font-size: 24px;
+            color: #686466;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: #ffc0cb;
+            color: #be6e6e;
+        }
+
+         /* Main Content */
+        .main-content {
+            display: flex;
+            padding: 67px 78px;
+            gap: 50px;
+        }
+
+        /* Product Images Section */
+        .product-images {
+            flex: 1;
+            max-width: 533px;
+        }
+
+        .main-image-container {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .main-image {
+            width: 100%;
+            height: 700px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .back-arrow {
+            position: absolute;
+            top: 22px;
+            left: 31px;
+            width: 39px;
+            height: 39px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .thumbnail-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .thumbnail {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .thumbnail:hover {
+            transform: scale(1.05);
+        }
+
+        /* Customer Reviews */
+        .customer-reviews {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .reviews-title {
+            font-size: 40px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            line-height: 47px;
+            color: #000000;
+            margin-bottom: 25px;
+        }
+
+        .rating-score {
+            font-size: 40px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            line-height: 47px;
+            color: #000000;
+            margin-bottom: 26px;
+        }
+
+        .rating-stars {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .star {
+            width: 54px;
+            height: 54px;
+        }
+
+        .review-btn {
+            background-color: #ffc0cb;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 32px;
+            font-family: 'Roboto', sans-serif;
+            color: #ffffff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .review-btn:hover {
+            background-color: #ff9fb3;
+            transform: translateY(-2px);
+        }
+
+        /* Product Details Section */
+        .product-details {
+            flex: 1;
+            max-width: 733px;
+            padding-left: 20px;
+        }
+
+        .product-title {
+            font-size: 40px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            line-height: 47px;
+            color: #000000;
+            margin-bottom: 29px;
+        }
+
+        .price-container {
+            margin-bottom: 21px;
+        }
+
+        .price {
+            font-size: 32px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            line-height: 38px;
+        }
+
+        .price .original-price {
+            color: #f32222;
+        }
+
+        .price .current-price {
+            color: #000000;
+        }
+
+        .rating-display {
+            margin-bottom: 25px;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #e5cfcf;
+            margin: 25px 0;
+        }
+
+        .color-section {
+            margin-bottom: 25px;
+        }
+
+        .section-label {
+            font-size: 24px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            line-height: 29px;
+            color: #000000;
+            margin-bottom: 10px;
+        }
+
+        .color-options {
+            width: 537px;
+            height: 49px;
+            margin-bottom: 20px;
+        }
+
+        .quantity-section {
+            margin-bottom: 32px;
+        }
+
+        .quantity-controls {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .quantity-btn {
+            width: 51px;
+            height: 56px;
+            border: 1px solid #b5b2b2;
+            border-radius: 8px;
+            background-color: #ffffff;
+            font-size: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quantity-btn:hover {
+            background-color: #ffc0cb;
+            color: #ffffff;
+        }
+
+        .quantity-input {
+            width: 51px;
+            height: 56px;
+            border: 1px solid #b5b2b2;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 24px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .add-to-cart-btn {
+            width: 100%;
+            height: 69px;
+            background-color: #ffc0cb;
+            border: none;
+            border-radius: 8px;
+            font-size: 32px;
+            font-family: 'Roboto', sans-serif;
+            color: #000000;
+            cursor: pointer;
+            margin-bottom: 55px;
+            transition: all 0.3s ease;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #ff9fb3;
+            transform: translateY(-2px);
+        }
+
+        .product-description {
+            font-size: 32px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            line-height: 37px;
+            color: #000000;
+            white-space: pre-line;
+        }
+
+        /* Section Divider */
+        .section-divider {
+            height: 1px;
+            background-color: #e5cfcf;
+            margin: 40px 62px;
+        }
+
+        /* You May Also Like Section */
+        .recommendations {
+            padding: 41px 94px 0;
+        }
+
+        .recommendations-title {
+            font-size: 40px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            line-height: 47px;
+            color: #000000;
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            background-color: #f3f3f3;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image-container {
+            position: relative;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .discount-badge {
+            position: absolute;
+            top: 18px;
+            left: 22px;
+            background-color: #ffffff;
+            color: #be6e6e;
+            font-size: 12px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            line-height: 15px;
+            padding: 6px 12px;
+            border-radius: 13px;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-name {
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            line-height: 19px;
+            color: #000000;
+            margin-bottom: 15px;
+        }
+
+        .product-price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-price {
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            line-height: 20px;
+            color: #be6e6e;
+        }
+
+        .product-original-price {
+            font-size: 12px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            line-height: 15px;
+            color: #868686;
+            text-decoration: line-through;
+            margin-left: 20px;
+        }
+
+        .cart-btn {
+            background-color: #ffc0cb;
+            border: none;
+            border-radius: 8px;
+            width: 46px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cart-btn:hover {
+            background-color: #ff9fb3;
+            transform: scale(1.1);
+        }
+
+        .cart-icon {
+            width: 26px;
+            height: 26px;
+        }
+
+
+        /* footer styles */
+        .footer {
+            background-color: #ffeeee;
+            padding: clamp(25px, 4vw, 33px) clamp(20px, 5vw, 64px) clamp(30px, 5vw, 43px);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: clamp(30px, 5vw, 50px);
+            margin-bottom: 25px;
+        }
+
+        .footer-brand {
+            max-width: 311px;
+        }
+
+        .footer-logo {
+            font-family: 'Pristina', cursive;
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: #be6e6e;
+            margin-bottom: 7px;
+        }
+
+        .footer-description {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(16px, 2vw, 20px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: #666161;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-title {
+            font-family: 'Inria Sans', sans-serif;
+            font-size: clamp(24px, 3vw, 36px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: #be6e6e;
+            margin-bottom: 8px;
+        }
+
+        .footer-link {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(16px, 2vw, 20px);
+            font-weight: 400;
+            line-height: 1.25;
+            color: #676161;
+            text-decoration: none;
+            margin-bottom: 7px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #be6e6e;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: clamp(15px, 3vw, 27px);
+            margin-top: 14px;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            width: clamp(20px, 3vw, 27px);
+            height: clamp(20px, 3vw, 27px);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .copyright {
+            font-family: 'Roboto', sans-serif;
+            font-size: clamp(16px, 2vw, 20px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: #744a33;
+        }
+
+        .copyright a {
+            color: #473eae;
+            text-decoration: none;
+        }
+
+        .copyright a:hover {
+            text-decoration: underline;
+        }
+         /* Responsive Design */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 100%;
+                padding: 0 20px;
+            }
+            
+            .main-content {
+                padding: 40px 20px;
+                gap: 30px;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 25px;
+            }
+            
+            .header {
+                padding: 0 24px;
+            }
+            
+            .nav-menu {
+                gap: 25px;
+            }
+            
+            .nav-menu a {
+                font-size: 28px;
+            }
+            
+            .recommendations {
+                padding: 41px 40px 0;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .main-content {
+                gap: 20px;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .nav-menu a {
+                font-size: 24px;
+            }
+            
+            .nav-menu .shop-link,
+            .nav-menu .contact-link {
+                font-size: 20px;
+            }
+            
+            .login-btn {
+                order: 3;
+                padding: 8px 16px;
+                font-size: 18px;
+                margin-left: auto;
+            }
+            
+            .main-content {
+                flex-direction: column;
+                padding: 30px 16px;
+                gap: 30px;
+            }
+            
+            .product-images {
+                max-width: 100%;
+            }
+            
+            .main-image-container {
+                margin-bottom: 40px;
+            }
+            
+            .main-image {
+                height: 400px;
+            }
+            
+            .thumbnail-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+                margin-bottom: 30px;
+            }
+            
+            .thumbnail {
+                height: 120px;
+            }
+            
+            .product-details {
+                max-width: 100%;
+                padding-left: 0;
+            }
+            
+            .product-title {
+                font-size: 32px;
+                line-height: 38px;
+                margin-bottom: 20px;
+            }
+            
+            .price {
+                font-size: 24px;
+            }
+            
+            .section-label {
+                font-size: 20px;
+            }
+            
+            .color-options {
+                width: 100%;
+                max-width: 400px;
+            }
+            
+            .add-to-cart-btn {
+                font-size: 24px;
+                height: 56px;
+                margin-bottom: 40px;
+            }
+            
+            .product-description {
+                font-size: 20px;
+                line-height: 28px;
+            }
+            
+            .customer-reviews {
+                margin-top: 30px;
+            }
+            
+            .reviews-title {
+                font-size: 28px;
+                line-height: 33px;
+            }
+            
+            .rating-score {
+                font-size: 32px;
+                line-height: 38px;
+            }
+            
+            .star {
+                width: 42px;
+                height: 42px;
+            }
+            
+            .review-btn {
+                font-size: 24px;
+                padding: 12px 20px;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+            
+            .recommendations {
+                padding: 30px 16px 0;
+            }
+            
+            .recommendations-title {
+                font-size: 32px;
+                line-height: 38px;
+                margin-bottom: 40px;
+            }
+            
+            .product-name {
+                font-size: 14px;
+                line-height: 17px;
+            }
+            
+            .product-price {
+                font-size: 14px;
+            }
+            
+            .product-original-price {
+                font-size: 11px;
+            }
+            
+            .footer {
+                margin: 30px 8px 0;
+                padding: 24px 20px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .footer-brand {
+                max-width: 100%;
+            }
+            
+            .footer-logo {
+                font-size: 40px;
+                line-height: 48px;
+            }
+            
+            .footer-description {
+                font-size: 18px;
+                line-height: 22px;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .footer-section-title {
+                font-size: 28px;
+                line-height: 34px;
+            }
+            
+            .footer-link {
+                font-size: 18px;
+                line-height: 22px;
+            }
+            
+            .footer-copyright {
+                font-size: 16px;
+                line-height: 20px;
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                position: relative;
+                padding: 0 16px;
+                height: auto;
+                min-height: 67px;
+                flex-wrap: wrap;
+            }
+            
+            .logo {
+                height: 45px;
+                width: 95px;
+            }
+            
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: rgba(255, 192, 203, 0.95);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                z-index: 100;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu a {
+                font-size: 24px;
+                padding: 12px 0;
+                border-bottom: 1px solid rgba(179, 156, 156, 0.3);
+                text-align: center;
+            }
+            
+            .nav-menu a:last-child {
+                border-bottom: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+                background: none;
+                border: none;
+                font-size: 28px;
+                color: #676365;
+                cursor: pointer;
+                padding: 8px;
+                order: 2;
+            }
+            
+            .login-btn {
+                order: 3;
+                padding: 8px 16px;
+                font-size: 18px;
+                margin-left: auto;
+            }
+            
+            .main-content {
+                flex-direction: column;
+                padding: 30px 16px;
+                gap: 30px;
+            }
+            
+            .product-images {
+                max-width: 100%;
+            }
+            
+            .main-image-container {
+                margin-bottom: 40px;
+            }
+            
+            .main-image {
+                height: 320px;
+            }
+            
+            .thumbnail-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+                margin-bottom: 30px;
+            }
+            
+            .thumbnail {
+                height: 120px;
+            }
+            
+            .product-details {
+                max-width: 100%;
+                padding-left: 0;
+            }
+            
+            .product-title {
+                font-size: 32px;
+                line-height: 38px;
+                margin-bottom: 20px;
+            }
+            
+            .price {
+                font-size: 24px;
+            }
+            
+            .section-label {
+                font-size: 20px;
+            }
+            
+            .color-options {
+                width: 100%;
+                max-width: 400px;
+            }
+            
+            .add-to-cart-btn {
+                font-size: 24px;
+                height: 56px;
+                margin-bottom: 40px;
+            }
+            
+            .product-description {
+                font-size: 20px;
+                line-height: 28px;
+            }
+            
+            .customer-reviews {
+                margin-top: 30px;
+            }
+            
+            .reviews-title {
+                font-size: 28px;
+                line-height: 33px;
+            }
+            
+            .rating-score {
+                font-size: 32px;
+                line-height: 38px;
+            }
+            
+            .star {
+                width: 42px;
+                height: 42px;
+            }
+            
+            .review-btn {
+                font-size: 24px;
+                padding: 12px 20px;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+            
+            .recommendations {
+                padding: 30px 16px 0;
+            }
+            
+            .recommendations-title {
+                font-size: 32px;
+                line-height: 38px;
+                margin-bottom: 40px;
+            }
+            
+            .product-name {
+                font-size: 14px;
+                line-height: 17px;
+            }
+            
+            .product-price {
+                font-size: 14px;
+            }
+            
+            .product-original-price {
+                font-size: 11px;
+            }
+            
+            .footer {
+                margin: 30px 8px 0;
+                padding: 24px 20px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .footer-brand {
+                max-width: 100%;
+            }
+            
+            .footer-logo {
+                font-size: 40px;
+                line-height: 48px;
+            }
+            
+            .footer-description {
+                font-size: 18px;
+                line-height: 22px;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .footer-section-title {
+                font-size: 28px;
+                line-height: 34px;
+            }
+            
+            .footer-link {
+                font-size: 18px;
+                line-height: 22px;
+            }
+            
+            .footer-copyright {
+                font-size: 16px;
+                line-height: 20px;
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 0 12px;
+                min-height: 60px;
+            }
+            
+            .logo {
+                height: 40px;
+                width: 85px;
+            }
+            
+            .login-btn {
+                font-size: 16px;
+                padding: 6px 12px;
+            }
+            
+            .main-content {
+                padding: 20px 12px;
+                gap: 20px;
+            }
+            
+            .main-image {
+                height: 320px;
+            }
+            
+            .thumbnail-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 6px;
+            }
+            
+            .thumbnail {
+                height: 100px;
+            }
+            
+            .product-title {
+                font-size: 28px;
+                line-height: 34px;
+            }
+            
+            .price {
+                font-size: 20px;
+            }
+            
+            .section-label {
+                font-size: 18px;
+            }
+            
+            .quantity-btn {
+                width: 45px;
+                height: 50px;
+                font-size: 32px;
+            }
+            
+            .quantity-input {
+                width: 45px;
+                height: 50px;
+                font-size: 20px;
+            }
+            
+            .add-to-cart-btn {
+                font-size: 20px;
+                height: 50px;
+            }
+            
+            .product-description {
+                font-size: 18px;
+                line-height: 25px;
+            }
+            
+            .reviews-title {
+                font-size: 24px;
+                line-height: 28px;
+            }
+            
+            .rating-score {
+                font-size: 28px;
+                line-height: 33px;
+            }
+            
+            .star {
+                width: 36px;
+                height: 36px;
+            }
+            
+            .rating-stars {
+                gap: 10px;
+            }
+            
+            .review-btn {
+                font-size: 20px;
+                padding: 10px 16px;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .product-card {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            
+            .product-image {
+                height: 250px;
+            }
+            
+            .recommendations {
+                padding: 20px 12px 0;
+            }
+            
+            .recommendations-title {
+                font-size: 28px;
+                line-height: 33px;
+                margin-bottom: 30px;
+            }
+            
+            .footer {
+                margin: 20px 4px 0;
+                padding: 20px 16px;
+            }
+            
+            .footer-logo {
+                font-size: 36px;
+                line-height: 43px;
+            }
+            
+            .footer-description {
+                font-size: 16px;
+                line-height: 20px;
+            }
+            
+            .footer-section-title {
+                font-size: 24px;
+                line-height: 29px;
+            }
+            
+            .footer-link {
+                font-size: 16px;
+                line-height: 20px;
+            }
+            
+            .footer-copyright {
+                font-size: 14px;
+                line-height: 18px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .main-image {
+                height: 280px;
+            }
+            
+            .thumbnail {
+                height: 80px;
+            }
+            
+            .product-title {
+                font-size: 24px;
+                line-height: 28px;
+            }
+            
+            .price {
+                font-size: 18px;
+            }
+            
+            .product-description {
+                font-size: 16px;
+                line-height: 22px;
+            }
+            
+            .recommendations-title {
+                font-size: 24px;
+                line-height: 28px;
+            }
+            
+            .reviews-title {
+                font-size: 20px;
+                line-height: 24px;
+            }
+            
+            .rating-score {
+                font-size: 24px;
+                line-height: 28px;
+            }
+            
+            .star {
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+        /* Additional responsive utilities */
+        @media (hover: none) {
+            .thumbnail:hover,
+            .product-card:hover,
+            .cart-btn:hover,
+            .review-btn:hover,
+            .add-to-cart-btn:hover,
+            .login-btn:hover,
+            .nav-menu a:hover,
+            .footer-link:hover,
+            .social-icon:hover {
+                transform: none;
+            }
+        }
+
+        /* High DPI displays */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .main-image,
+            .thumbnail,
+            .product-image {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+            }
+        }
+            
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <a href="#" class="logo">Veluvia</a>
+                <nav class="nav-menu">
+                    <a href="#" class="nav-link">HOME</a>
+                    <a href="#" class="nav-link">SHOP</a>
+                    <a href="#" class="nav-link">ABOUT</a>
+                    <a href="#" class="nav-link">CONTACT</a>
+                    <a href="#" class="login-btn">LOG IN</a>
+                </nav>
+            </div>
+        </header>
+    
+         <!-- Main Content -->
+        <main class="main-content">
+            <!-- Product Images Section -->
+            <div class="product-images">
+                <div class="main-image-container">
+                    <img src="Bare water cushion.jpg" alt="Bare Water Cushion Main Image" class="main-image" id="mainImage" />
+                    <!-- <img src="arrow.png" alt="Back Arrow" class="back-arrow" onclick="goBack()" /> -->
+                    <a href="homepage.html">
+                        <img src="arrow.png" alt="Back to Homepage" class="back-arrow" />
+                    </a>
+                </div>
+                
+                <div class="thumbnail-grid">
+                    <img src="Bare water cushion.jpg" alt="Product Thumbnail 1" class="thumbnail" onclick="changeMainImage(this.src)" />
+                    <img src="Color01.jpg" alt="Product Thumbnail 2" class="thumbnail" onclick="changeMainImage(this.src)" />
+                    <img src="Color02.jpg" alt="Product Thumbnail 3" class="thumbnail" onclick="changeMainImage(this.src)" />
+                    <img src="Color03.jpg" alt="Product Thumbnail 4" class="thumbnail" onclick="changeMainImage(this.src)" />
+                    <img src="Color04.jpg" alt="Product Thumbnail 5" class="thumbnail" onclick="changeMainImage(this.src)" />
+                    <img src="Color05.jpg" alt="Product Thumbnail 6" class="thumbnail" onclick="changeMainImage(this.src)" />
+                </div>
+
+                <!-- Customer Reviews -->
+                <div class="customer-reviews">
+                    <h3 class="reviews-title">Customer reviews</h3>
+                    <div class="rating-score">4.9</div>
+                    <div class="rating-stars">
+                        <img src="star.jpg" alt="Star" class="star" />
+                        <img src="star.jpg" alt="Star" class="star" />
+                        <img src="star.jpg" alt="Star" class="star" />
+                        <img src="star.jpg" alt="Star" class="star" />
+                        <img src="star.jpg" alt="Star" class="star" />
+                    </div>
+                    <button class="review-btn" onclick="writeReview()">Write a review</button>
+                </div>
+            </div>
+
+            <!-- Product Details Section -->
+            <div class="product-details">
+                <h1 class="product-title">Bare Water Cushion</h1>
+                
+                <div class="price-container">
+                    <div class="price">
+                        <span class="original-price">From $16.00 USD </span>
+                        <span class="current-price"> to $11.20</span>
+                    </div>
+                </div>
+
+                <div class="rating-display">
+                    <img src="product rating.jpg" alt="Product Rating" style="width: 145px; height: 54px;" />
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="color-section">
+                    <label class="section-label">Color</label>
+                    <img src="Color code.jpg" alt="Color Options" class="color-options" />
+                </div>
+
+                <div class="quantity-section">
+                    <label class="section-label">Quantity</label>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
+                        <input type="number" value="1" min="1" class="quantity-input" id="quantityInput" />
+                        <button class="quantity-btn" onclick="increaseQuantity()">+</button>
+                    </div>
+                </div>
+
+                <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+
+                <div class="product-description">
+*02 Pure 21 Refill | Expires on 11-03-2025
+
+💙Fresh moisture without any glitter. 💙Light and fresh water base. 💙Moisture replenishment as soon as applied, comfort without tightness. 💙Adheres without stickiness and stays fresh all day long.  01.PORCELAIN 17: Bright ivory color with a hint of pink, perfect for bright skin tones
+
+02.PURE 21: A natural pink ivory color without yellow undertones. Perfect for those who have used No.21 before
+
+03.NATURAL 21: Neutral ivory shade that is neither red nor yellow. Recommended for those with a shade #21 who are looking for a natural skin tone rather than a brightened look
+
+04.BEIGE 23: A calm natural beige color. Perfect for those who find the standard shade #21 on the market to be too bright
+
+05.SAND 25: Healthy, warm neutral beige tone. Suitable for those who want to achieve a healthy and warm toned skin
+                </div>
+            </div>
+        </main>
+
+        <!-- Section Divider -->
+        <div class="section-divider"></div>
+
+        <!-- You May Also Like Section -->
+        <section class="recommendations">
+            <h2 class="recommendations-title">You may also like</h2>
+            
+            <div class="products-grid">
+                <!-- Row 1 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Glasting Melting Balm Original Series.jpg" alt="Glasting Melting Balm Original Series" class="product-image" />
+                        <span class="discount-badge">51% off</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Glasting Melting Balm #Original Series</h3>
+                        <div class="product-price-row">
+                            <span class="product-price">$6.90</span>
+                            <span class="product-original-price">$13.90</span>
+                            <button class="cart-btn" onclick="addProductToCart('glasting-melting-balm-original')">
+                                <img src="Cart.jpg" alt="Add to Cart" class="cart-icon" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Glasting melting balm.jpg" alt="Glasting Melting Balm Dusty On The Nude" class="product-image" />
+                        <span class="discount-badge">29% off</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Glasting Melting Balm #Dusty On The Nude</h3>
+                        <div class="product-price-row">
+                            <span class="product-price">$9.99</span>
+                            <span class="product-original-price">$13.99</span>
+                            <button class="cart-btn" onclick="addProductToCart('glasting-melting-balm-dusty')">
+                                <img src="Cart.jpg" alt="Add to Cart" class="cart-icon" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Dewyful.jpg" alt="Dewyful Water Tint Milk Grocery Series" class="product-image" />
+                        <span class="discount-badge">29% off</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Dewyful Water Tint Milk Grocery Series</h3>
+                        <div class="product-price-row">
+                            <span class="product-price">$9.99</span>
+                            <span class="product-original-price">$13.99</span>
+                            <button class="cart-btn" onclick="addProductToCart('dewyful-water-tint')">
+                                <img src="Cart.jpg" alt="Add to Cart" class="cart-icon" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Glasting water gloss.jpg" alt="Glasting Water Gloss" class="product-image" />
+                        <span class="discount-badge">29% off</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Glasting Water Gloss</h3>
+                        <div class="product-price-row">
+                            <span class="product-price">$9.99</span>
+                            <span class="product-original-price">$13.99</span>
+                            <button class="cart-btn" onclick="addProductToCart('glasting-water-gloss')">
+                                <img src="Cart.jpg" alt="Add to Cart" class="cart-icon" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Glasting water Tint.jpg" alt="Glasting Water Tint" class="product-image" />
+                        <span class="discount-badge">25% off</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Glasting Water Tint</h3>
+                        <div class="product-price-row">
+                            <span class="product-price">$9.99</span>
+                            <span class="product-original-price">$13.99</span>
+                            <button class="cart-btn" onclick="addProductToCart('glasting-water-tint')">
+                                <img src="Cart.jpg" alt="Add to Cart" class="cart-icon" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Juicy Lasting Tint Bare Juicy Series 5.5g.jpg" alt="Juicy Lasting Tint Bare Juicy Series" class="product-image" />
+                        <span class="discount-badge">30% off</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Juicy Lasting Tint Bare Juicy Series 5.5g</h3>
+                        <div class="product-price-row">
+                            <span class="product-price">$9.99</span>
+                            <span class="product-original-price">$13.99</span>
+                            <button class="cart-btn" onclick="addProductToCart('juicy-lasting-tint')">
+                                <img src="Cart.jpg" alt="Add to Cart" class="cart-icon" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="lipstick.jpg" alt="Glasting Melting Balm Dusty On The Nude" class="product-image" />
+                        <span class="discount-badge">25% off</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Glasting Melting Balm #Dusty On The Nude</h3>
+                        <div class="product-price-row">
+                            <span class="product-price">$9.99</span>
+                            <span class="product-original-price">$13.99</span>
+                            <button class="cart-btn" onclick="addProductToCart('glasting-melting-balm-dusty-2')">
+                                <img src="Cart.jpg" alt="Add to Cart" class="cart-icon" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Glasting Melting Balm New Bare Series.jpg" alt="Glasting Melting Balm New Bare Series" class="product-image" />
+                        <span class="discount-badge">29% off</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Glasting Melting Balm New Bare Series</h3>
+                        <div class="product-price-row">
+                            <span class="product-price">$9.99</span>
+                            <span class="product-original-price">$13.99</span>
+                            <button class="cart-btn" onclick="addProductToCart('glasting-melting-balm-new-bare')">
+                                <img src="Cart.jpg" alt="Add to Cart" class="cart-icon" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">Veluvia</h3>
+                    <p class="footer-description">We offer the best products of the most recognized brands in the world.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Our store</h4>
+                    <a href="#" class="footer-link">About</a>
+                    <a href="#" class="footer-link">Products</a>
+                    <a href="#" class="footer-link">History</a>
+                    <a href="#" class="footer-link">Shop</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Information</h4>
+                    <a href="#" class="footer-link">Request a quote</a>
+                    <a href="#" class="footer-link">Find a dealer</a>
+                    <a href="#" class="footer-link">Contact us</a>
+                    <a href="#" class="footer-link">Services</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Follow us</h4>
+                    <div class="social-icons">
+                        <img src="facebook.png" alt="Facebook" class="social-icon" onclick="openSocialLink('facebook')"/>
+                        <img src="ig.jpg" alt="Instagram" class="social-icon" onclick="openSocialLink('instagram')"/>
+                        <img src="twitter.jpg" alt="Twitter" class="social-icon" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">
+                    © 2025 <strong>Veluvia</strong>. All rights reserved. | 
+                    <a href="#">Privacy Policy</a> | 
+                    <a href="#">Terms of Service</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
